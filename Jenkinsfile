@@ -10,3 +10,4 @@ pipeline {
         sh "#!/bin/sh\nct lint --chart-dirs . --validate-maintainers=false --debug"
       }
     }
+}

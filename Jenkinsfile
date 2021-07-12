@@ -9,7 +9,7 @@ pipeline {
             script {
               sh "pwd"
               sh "ls"
-              sh "helm lint ."
+              sh "/usr/local/bin/helm lint ."
             }
           }
         }

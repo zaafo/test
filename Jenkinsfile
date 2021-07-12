@@ -4,15 +4,9 @@ pipeline {
   agent {
     label "jenkins-nodejs"
   }
-// Lint de la chart
-    stage('lint Yaml config files') {
-        steps {
-            script {
-                commonFunction_OP.lintHelm()
-            }
-        }
+  
+    stage('lint') {
+      steps {
+        sh "#!/bin/sh\nct lint --chart-dirs . --validate-maintainers=false --debug"
+      }
     }
-}
-
-
-

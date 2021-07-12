@@ -7,7 +7,7 @@ pipeline {
         stage('lint') {
           steps {
             script {
-              sh "find . -name Chart.yaml | xargs -I{} /bin/sh -c 'cd \"\$(dirname {})\"; helm lint .'"
+              sh "find . -name Chart.yaml | xargs -I{} /bin/sh -c 'cd \"\$(dirname {})\"; /usr/local/bin/helm lint .'"
             }
           }
         }

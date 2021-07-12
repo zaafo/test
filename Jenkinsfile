@@ -7,10 +7,12 @@ pipeline {
         stage('lint') {
           steps {
             script {
-              commonFunction.helmInit()
+              sh "pwd"
+              sh "ls"
+              sh "/usr/local/bin/helm lint ."
+              sh "/usr/local/bin/helm package ."
             }
           }
         }
     }
 }
-            

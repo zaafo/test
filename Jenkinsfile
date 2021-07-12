@@ -8,7 +8,9 @@ pipeline {
           steps {
             script {
               sh "pwd"
-              sh "ls"            }
+              sh "ls"
+              sh "helm lint ."
+            }
           }
         }
     }

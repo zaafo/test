@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label "jenkins-nodejs"
+    label ""
   }
     stages{  
         stage('lint') {

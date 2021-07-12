@@ -1,7 +1,12 @@
 #!groovy
 
-def helmLint(String chart_dir) {
-    // lint helm chart
-    sh "/usr/local/bin/helm lint ${chart_dir}"
-
+// Lint de la chart
+@Deprecated
+def lintHelm(String chartPath) {
+    def workspace = pwd()
+    def completeChartPath = workspace + chartPath
+    sh "cd ${completeChartPath} &&  ls -ltr "
+    sh "cd ${completeChartPath} && helm lint "
 }
+
+
